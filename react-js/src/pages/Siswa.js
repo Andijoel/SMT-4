@@ -1,12 +1,12 @@
-import Listsiswa from "./Listsiswa";
+import Listsiswa from './Listsiswa';
 
 function Siswa() {
-  const nama = ['joni','budi','siti'];
+    const nama = ['joni', 'budi', 'siti']
     return (
-      <div className="App">
+    <div className="App">
         <Listsiswa judul={nama} />
-      </div>
+    </div>
     );
-  }
-  
-  export default Siswa;
+}
+
+export default Siswa;

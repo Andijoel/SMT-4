@@ -1,26 +1,25 @@
 function Tabel(props) {
     const menus = props.menu;
-    const title = props.title;
+    const title = props.titel;
     return (
-      <div className="App">
+    <div className="App">
         <h1>{title}</h1>
         <div>
             <table>
-            <tr>
-                <th>Menu</th>
-                <th>Harga</th>
-            </tr>
-                {menus.map((data)=>(
-                    <tr key={data.idmenu}>
-                        <td>{data.menu} </td>
-                        <td>{data.harga} </td>
-                    </tr>
-                ))}
+                <tr>
+                    <th>Menu</th>
+                    <th>Harga</th>
+                </tr>
+            {menus.map((data) => (
+                <tr key={data.idmenu}>
+                    <td>{data.menu}</td>
+                    <td>{data.harga}</td>
+                </tr>
+            ))}
             </table>
         </div>
-      </div>
+    </div>
     );
-  }
-  
-  export default Tabel;
-  
+}
+
+export default Tabel;
