@@ -21,9 +21,9 @@ $router->post('api/register', ['uses' => 'LoginController@register']);
 
 $router->post('api/login', ['uses' => 'LoginController@login']);
 
-$router->group(['prefix' => 'api', 'middleware' => 'auth'], function () use ($router) {
-    $router->get('kategori', ['uses' => 'KategoriController@index']);
+$router->get('api/kategori', ['uses' => 'KategoriController@index']);
 
+$router->group(['prefix' => 'api', 'middleware' => 'auth'], function () use ($router) {
     $router->get('kategori/{id}', ['uses' => 'KategoriController@show']);
 
     $router->delete('kategori/{id}', ['uses' => 'KategoriController@destroy']);
@@ -45,6 +45,12 @@ $router->group(['prefix' => 'api', 'middleware' => 'auth'], function () use ($ro
 
     /* Batas Pelanggan dan Menu */
     $router->get('menu', ['uses' => 'MenuController@index']);
+
+    $router->get('menu/{id}', ['uses' => 'MenuController@show']);
+
+    $router->delete('menu/{id}', ['uses' => 'MenuController@destroy']);
+
+    $router->post('menu/{id}', ['uses' => 'MenuController@update']);
 
     $router->post('menu', ['uses' => 'MenuController@create']);
 });
